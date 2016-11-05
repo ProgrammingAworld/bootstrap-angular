@@ -1,0 +1,12 @@
+.textCenter{
+   text-align: center;
+}
+.textRight{
+   text-align: right;
+}
+.pay{
+   width: 140px;
+}
+.borderNone{
+   border: none!important;
+}

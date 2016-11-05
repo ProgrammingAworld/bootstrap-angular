@@ -1,0 +1,20 @@
+<div class="container-fluid">
+   <div class="row">
+      <div class="col-md-8">
+         <table class="table borderNone">
+            <tr>
+               <td class="borderNone h4" colspan="2">请选择支付方式~~</td>
+            </tr>
+            <tr>
+               <td class="borderNone"><img src="/images/pay/alipay@.png" alt="图片还没有记载出来哎...尝试刷新一下页面吧！" class="pay" ng-click="showApliay()"></td>
+               <td class="borderNone"><img src="/images/pay/wechat@.png" alt="图片还没有记载出来哎...尝试刷新一下页面吧！" class="pay" ng-click="showWechat()"></td>
+            </tr>
+            <tr ng-if='showPay'>
+               <td class="borderNone"><img src="/images/pay/alipay.png" alt="图片还没有记载出来哎...尝试刷新一下页面吧！" class="pay" ng-if="pay1"></td>
+               <td class="borderNone"><img src="/images/pay/wechat.png" alt="图片还没有记载出来哎...尝试刷新一下页面吧！" class="pay" ng-if="pay2"></td>
+            </tr>
+         </table>
+      </div>
+      <div class="col-md-4"></div>
+   </div>
+</div>

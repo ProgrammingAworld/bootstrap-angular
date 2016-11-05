@@ -1,0 +1,47 @@
+<div class="container-fluid">
+   <div class="row">
+      <h3 class="col-sm-12">购物车</h3>
+      <div class="col-md-8">
+         <table class="table table-bordered">
+            <tr class="well">
+               <th>商品</th>
+               <th>数量</th>
+               <th>单价</th>
+               <th>总价</th>
+               <th>操作</th>
+            </tr>
+            <tr ng-if="isShow">
+               <td colspan="4">
+                  <span class="textCenter">您的购物车空空如也<a href="#/list">快去购物吧~~</a></span>
+               </td>
+            </tr>
+            <tr ng-repeat="good in goods">
+               <td>
+                  <img src="/images/products/{{good.id}}.jpg" alt="图片暂时无法显示，请刷新试一下" />
+               </td>
+               <td class="h4">
+                  <button class="btn btn-success" ng-click="decrease(good.id,good.num)"><i class="h4">--</i></button>
+                  <input type="number" min="1" ng-model="good.num" ng-change="changeNum(good.id)">
+                  <button class="btn btn-primary" ng-click="increase(good.id,good.num)"><i class="h4">+</i></button>
+               </td>
+               <td class="h4 textCenter">{{good.price}}</td>
+               <td class="h4 textCenter">{{good.price*good.num}}</td>
+               <td class="h4"><a href="" ng-click="delate(good.id)">删除</a></td>
+            </tr>
+            <tr class="well">
+               <td class="h4"><b>合计:</b></td>
+               <td class="textCenter h4">{{totalNum}}</td>
+               <td colspan="3" class="textCenter h4">{{totalPrice}}</td>
+            </tr>
+         </table>
+      </div>
+      <div class="col-md-4" style="pa">
+         <button class="btn btn-default btn-block" onclick="window.location.href='index.html'">返回首页</button>
+         <button class="btn btn-danger btn-block" ng-click="clearCart()" style="margin-bottom:6px;">清空购物车</button>
+         <a href="#/cart/pay"><button class="btn btn-success btn-block">在线支付</button></a>
+      </div>
+   </div>
+</div>
+<div class="container-fluid">
+   <ui-view></ui-view>
+</div>

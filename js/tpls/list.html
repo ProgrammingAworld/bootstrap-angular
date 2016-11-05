@@ -1,0 +1,38 @@
+<div class="table-responsive">
+   <form>
+      <p>商品搜索：</p>
+      <input type="text" class="form-control" ng-model="searchText">
+      <!-- <button type="button" class="btn btn-success">Search</button> -->
+   </form>
+   <table class="table">
+      <caption>商品列表</caption>
+      <tr class="well">
+         <td colspan="4" class="h3">
+            <!-- <a href="#" class="textRight"><span class="glyphicon glyphicon-shopping-cart textRight" style="width:100%">{{totalNum}}个,{{totalPrice|currency: '￥'}}</span></a> -->
+            <cart-infor></cart-infor>
+         </td>
+      </tr>
+      <tr class="success">
+         <th>图片</th>
+         <th>介绍</th>
+         <th>价格</th>
+         <th>操作</th>
+      </tr>
+      <tr ng-repeat="item in items|filter:searchText" ng-class="$index%2==0?'warning':'info'">
+         <th>
+            <img src="/images/products/{{item.id}}.jpg" alt="{{item.id}}">
+         </th>
+         <th>
+            <a href="#/detail/{{item.id}}">{{item.name}}</a>
+            <p>{{item.desc}}</p>
+         </th>
+         <th>{{item.price}}</th>
+         <th><a href="" class="text-success" ng-click="add(item.id,item.price)">加入购物车</a></th>
+      </tr>
+      <tr class="well">
+         <td colspan="4" class="h3">
+            <cart-infor></cart-infor>
+         </td>
+      </tr>
+   </table>
+</div>
